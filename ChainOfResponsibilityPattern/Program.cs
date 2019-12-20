@@ -7,7 +7,7 @@
         public static void Main()
         {
             // Build up the team (chain).
-            BusinessAnalyst boddy = new BusinessAnalyst(); 
+            BusinessAnalyst boddy = new BusinessAnalyst();
             SoftwareArchitect hristo = new SoftwareArchitect();
             SoftwareEngineer filip = new SoftwareEngineer();
             QualityAssuranceEngineer todor = new QualityAssuranceEngineer();
