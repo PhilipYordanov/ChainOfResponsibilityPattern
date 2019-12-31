@@ -8,17 +8,17 @@
         public static void Main()
         {
             // Build up the team (chain).
-            BusinessAnalyst boddy = new BusinessAnalyst();
-            SoftwareArchitect hristo = new SoftwareArchitect();
-            SoftwareEngineer filip = new SoftwareEngineer();
-            QualityAssuranceEngineer todor = new QualityAssuranceEngineer();
-            DevOpsEngineer deivid = new DevOpsEngineer();
+            BusinessAnalyst businessAnalyst = new BusinessAnalyst();
+            SoftwareArchitect softwareArchitect = new SoftwareArchitect();
+            SoftwareEngineer softwareEngineer = new SoftwareEngineer();
+            QualityAssuranceEngineer qualityAssuranceEngineer = new QualityAssuranceEngineer();
+            DevOpsEngineer devOpsEngineer = new DevOpsEngineer();
 
             // introduce the team and the cycle of developing (building the chain)
-            boddy.SetNext(hristo);
-            hristo.SetNext(filip);
-            filip.SetNext(todor);
-            todor.SetNext(deivid);
+            businessAnalyst.SetNext(softwareArchitect);
+            softwareArchitect.SetNext(softwareEngineer);
+            softwareEngineer.SetNext(qualityAssuranceEngineer);
+            qualityAssuranceEngineer.SetNext(devOpsEngineer);
 
             // client gives the requirement to business analyst.
             Requirement requirement = new Requirement()
@@ -32,8 +32,8 @@
             };
 
             // our Business Analyst retrieves two requirements from our client
-            boddy.Handle(requirement);
-            boddy.Handle(requirement2);
+            businessAnalyst.Handle(requirement);
+            businessAnalyst.Handle(requirement2);
 
             // first requirement is finished/closed by our DevOpsEngineer
             foreach (var operation in requirement.OperationsDone)
