@@ -23,6 +23,7 @@
             // client gives the requirement to business analyst.
             Requirement requirement = new Requirement()
             {
+                // represents the person who can finish/close the requirement 
                 Type = RequirementType.DevOpsEngineer
             };
             Requirement requirement2 = new Requirement()
@@ -30,15 +31,17 @@
                 Type = RequirementType.SoftwareEngineer
             };
 
+            // our Business Analyst retrieves two requirements from our client
             boddy.Handle(requirement);
             boddy.Handle(requirement2);
 
-            // test what happens through the chain.
+            // first requirement is finished/closed by our DevOpsEngineer
             foreach (var operation in requirement.OperationsDone)
             {
                 Console.WriteLine(operation);
             }
             Console.WriteLine("================================================");
+            // second requirement is finished/closed by our SoftwareEngineer
             foreach (var operation in requirement2.OperationsDone)
             {
                 Console.WriteLine(operation);
